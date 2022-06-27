@@ -1,0 +1,46 @@
+@media(min-width: 1910px) and (max-width:1980px){
+.pre-h-t{
+    font-size: 55px;
+}
+.dom{
+    font-size: 55px;
+    padding-left: 135px;
+}
+.cat-f{
+    margin-left: 90px;
+}
+.hed-i{
+    margin-left: 90px;
+}
+.dropdown-item{
+    font-size: 22px;
+}
+.black-fotter{
+    padding-left: 180px;
+}
+.full-img{
+    padding-left: 250px;
+}
+}
+
+@media(min-width: 1210px) and (max-width:1360px){
+    .pre-h-t{
+        font-size: 40px;
+        margin-left: -40px;
+    }
+    .dom{
+        font-size: 55px;
+        margin-left: -40px;
+    }
+
+
+    .cat-f{
+        margin-left: -20px;
+    }
+    .full-img{
+        margin-left: -55px;
+    }
+    .black{
+        margin-left: -45px;
+    }
+}
