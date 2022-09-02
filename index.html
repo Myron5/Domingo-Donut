@@ -1,210 +1,323 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head> 
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Domingo Donut</title>
     <link rel="shortcut icon" href="assets/img/page_logo.png"/>
     <link rel="stylesheet" href="assets/media.css">
     <link rel="stylesheet" href="assets/index/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  </head>
-
+</head>
 <body>
-  <!----------------------------------------------  PREheader  ---------------------------------------------->
-  <div class="pre-header">             
-      <img src="assets/img/pre-hed.jpg" alt="" class="col-lg-12">
-      <h1 class="pre-h-t">Find your favorite recipe with us</h1>
-      <h1 class="dom">DOMINGO DONUT</h1>
-  </div>                                
-  <!----------------------------------------------  PREheader end  ---------------------------------------------->
 
-  
-  <!----------------------------------------------  Header  ---------------------------------------------->
-  <div class="hed-fot">                               
-    <div class="header">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
+    <!-- ----------------------------------------- Хедер -------------------------------------------->
 
-          <a class="navbar-brand hed-i" href="index.html"><img src="assets/img/sm_donut_logo.png" alt="" class="donut-logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown nav-pod">
-                <a class="cat-f dropdown-toggle" urhref="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categories
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="List/list_main.php?current=1&category=1">First course</a></li>
-                  <li><a class="dropdown-item" href="List/list_main.php?current=1&category=2">Main course</a></li>
-                  <li><a class="dropdown-item" href="List/list_main.php?current=1&category=3">Breakfast</a></li>
-                  <li><a class="dropdown-item" href="List/list_main.php?current=1&category=4">Supper</a></li>
-                  <li><a class="dropdown-item" href="List/list_main.php?current=1&category=5">Drinks</a></li>
-                  <li><a class="dropdown-item" href="List/list_main.php?current=1&category=6">Salads</a></li>
-                  <li><a class="dropdown-item" href="List/list_main.php?current=1&category=7">Appetizer</a></li>
-                  <li><a class="dropdown-item" href="List/list_main.php?current=1&category=8">Desserts</a></li>
-                  <li><a class="dropdown-item" href="List/list_main.php?current=1&category=9">Baking</a></li>
-                  <li><a class="dropdown-item" href="List/list_main.php?current=1&category=10">Other...</a></li>
-                </ul>
-              </li>
-              <li class="nav-item nav-pod"> 
-                <a class="cat-f" href="AddPost/addpost_main.html">Add recipe<img src="assets/img/recipes.png" alt="" class="icon_hed"></a> 
-              </li>
-              <li class="nav-item nav-pod">
-                <a class="cat-f" href="SignUP/signup_main.html">Sign up<img src="assets/img/add-user.png" alt="" class="icon_hed"></a>  <!--nav-link для стилю-->
-              </li>
-              <li class="nav-item nav-pod">
-                <a class="cat-f" href="SignIN/signin_main.php">Sign in<img src="assets/img/refer.png" alt="" class="icon_hed"></a>
-              </li>
-            </ul>
-          </div>
-          
-        </div>
-      </nav>
-    </div>          
-    <!------------------------------------------------  Header end  ------------------------------------------------>
+    <div class="wrapper">
 
+        <header class="header">
+            <div class="header__container _container">
+                <!---------------------- Лого ---------------------->
+                <a href="index.html" class="header__logo"> <img width="100px" src="assets/img/sm_donut_logo.png" alt=""> </a>
 
-    <!------------------------------------------------  Search  ------------------------------------------------>
-    <div class="search-bar">    
-      <form class="example">             
-        <input class="search-ph" type="text" placeholder="Search..">
-        <button type="submit"> 
-          <img src="assets/img/search.png" alt="" class="search_icon"> 
-        </button>   <!-- Тут Пошук -->
-      </form>  
-    </div>                        
-    <!------------------------------------------------  End search  ------------------------------------------------>
-    
+                <!---------------------- Навігація ---------------------->
+                <nav class="header__menu">
+                    <ul class="menu__list">
+                        <li class="menu__item"> 
+                            <div class="menu__link menu__link-1"> 
+                                <img width="25px" src="assets/img/category.png" alt="">      
+                                Categories  
+                                <ul class="cat">
+                                    <li>
+                                        <a href="List/list_main.php?current=1&category=1" class="cat__link"> First course </a>
+                                    </li>
 
-    <!------------------------------------------------  Hot recipes  ------------------------------------------------>
-    <div class="hot-title">    
+                                    <li>
+                                        <a href="List/list_main.php?current=1&category=2" class="cat__link"> Main course </a>
+                                    </li>
 
-      <div class="container-fluid">
-          <h2 class="rec-title">New recipes</h2>
-      </div>
-      <div class="full-img">
-        <div id="carouselExampleCaptions" class="carousel slide car-space" data-bs-ride="false">
+                                    <li>
+                                        <a href="List/list_main.php?current=1&category=3" class="cat__link"> Breakfast </a>
+                                    </li>
 
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img width="875px" height="450px"  src="assets/img/pic1.jpg" class="d-block w-100 ph1" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <a href="#" class="car-link li1"></a>
-              </div>
+                                    <li>
+                                        <a href="List/list_main.php?current=1&category=4" class="cat__link"> Supper </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="List/list_main.php?current=1&category=5" class="cat__link"> Drinks </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="List/list_main.php?current=1&category=6" class="cat__link"> Salads </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="List/list_main.php?current=1&category=7" class="cat__link"> Snacks </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="List/list_main.php?current=1&category=8" class="cat__link"> Desserts </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="List/list_main.php?current=1&category=9" class="cat__link"> Baking </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="List/list_main.php?current=1&category=10" class="cat__link"> Another </a>
+                                    </li>
+                                </ul> 
+                            </div>
+                        </li>
+                        <li class="menu__item"> <a href="AddPost/addpost_main.html" class="menu__link menu__link-2"> <img width="25px" src="assets/img/add-receipe.png" alt="">   Add recipe   </a></li>
+                        <li class="menu__item"> <a href="SignUP/signup_main.html" class="menu__link menu__link-3"> <img width="25px" src="assets/img/sign-up.png" alt="">       Sign up      </a></li>
+                        <li class="menu__item"> <a href="SignIN/signin_main.php" class="menu__link menu__link-4"> <img width="25px" src="assets/img/sign-in.png" alt="">       Sign in      </a></li>
+                    </ul>
+                </nav>
             </div>
-            <div class="carousel-item">
-              <img width="875px" height="450px"  src="assets/img/pic1.jpg" class="d-block w-100 ph2" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <a href="#" class="car-link li2"></a>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img width="875px" height="450px"  src="assets/img/pic1.jpg" class="d-block w-100 ph3" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <a href="#" class="car-link li3"></a>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
 
-        </div>
-      </div>
-      
-    </div>      
-    <!----------------------------------------------  End hot recipes  ----------------------------------------------->
+                <!---------------------- Пошук ---------------------->
+                <div class="header__search">    
+                    <form class="search__form">             
+                        <input class="search__input" type="text" placeholder="Search..">
+                        <button class="search__btn" type="submit"> 
+                            <img src="assets/img/search_.png" width="56px" alt=""> 
+                        </button>   
+                    </form>  
+                </div> 
+        </header>
 
+        <!-------------------------------------------- Мейн -------------------------------------------->
+        <div class="background-cover">
 
-    <!----------------------------------------------  Categories  ---------------------------------------------->
-    <div class="container-fluid">
-      <h2 class="rec-title">Categories</h2>
-    </div>
+            <main class="main ">
 
-    <div class="container rec-cat-bl">
-      <div class="row">
-        <div class="col-md-3 col-sm-6 rec-cat-div rec-img-1"><a class="cat-rec-item" href="List/list_main.php?current=1&category=1">First course</a></div>
-        <div class="col-md-3 col-sm-6 rec-cat-div rec-img-2"><a class="cat-rec-item" href="List/list_main.php?current=1&category=2">Main course</a></div>
-        <div class="col-md-3 col-sm-6 rec-cat-div rec-img-3"><a class="cat-rec-item" href="List/list_main.php?current=1&category=3">Breakfast</a></div>
-        <div class="col-md-3 col-sm-6 rec-cat-div rec-img-4"><a class="cat-rec-item" href="List/list_main.php?current=1&category=4">Supper</a></div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-md-3 col-sm-6 rec-cat-div rec-img-5"><a class="cat-rec-item" href="List/list_main.php?current=1&category=5">Drinks</a></div>
-        <div class="col-md-3 col-sm-6 rec-cat-div rec-img-6"><a class="cat-rec-item" href="List/list_main.php?current=1&category=6">Salads</a></div>
-        <div class="col-md-3 col-sm-6 rec-cat-div rec-img-7"><a class="cat-rec-item" href="List/list_main.php?current=1&category=7">Appetizer</a></div>
-        <div class="col-md-3 col-sm-6 rec-cat-div rec-img-8"><a class="cat-rec-item" href="List/list_main.php?current=1&category=8">Desserts</a></div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-md-3 col-sm-6 rec-cat-div"> <a class="cat-rec-item" href="#">   </a> </div>
-        <div class="col-md-3 col-sm-6 rec-cat-div rec-img-9"> <a class="cat-rec-item" href="List/list_main.php?current=1&category=9">Baking</a> </div>
-        <div class="col-md-3 col-sm-6 rec-cat-div rec-img-10"> <a class="cat-rec-item" href="List/list_main.php?current=1&category=10">Other...</a> </div>
-        <div class="col-md-3 col-sm-6 rec-cat-div"> <a class="cat-rec-item" href="#">   </a> </div>
-      </div>
-    </div>
-  
-    <!----------------------------------------------  End of categories  ---------------------------------------------->
-           
-  
-    <div class="d-flex flex-column h-100">
-      <footer class="w-100 py-4 flex-shrink-0">
-        <div class="container py-4">
-          <div class="row gy-4 gx-5">
+                <!---------------------- Дивіз ---------------------->
+                <div class="main__container _container">
+                    <div class="main-block__body">
+                        <h2>Find your favorite recipe with us</h2>
+                        <br><br> 
+                        <h1>DOMINGO DONUT</h1>
+                        <br> <br><br><br><br><br><br><br><br><br><br><br>      
+                    </div>         
+                </div>
 
-            <div class="col-lg-4 col-md-6">
-              <a href="index.html"><img src="assets/img/sm_donut_logo.png" alt="" class="fotter-logo"> </a>
-              <div>
-                <p class="sm-txt-fotter underlogo_txt">We in social networks</p>
-                <a href="https://www.instagram.com/domingo_donut/" class="inst-link social" target="_blank">Instagram</a> 
-                <a href="https://t.me/Domingo_Donut" class="telega-link social" target="_blank">Telegram</a>
-              </div> 
-            </div>
-            <div class="col-lg-2 col-md-6">
+                <!---------------------- Фото (бек) ---------------------->
+                <div class="main-block__image _ibg">
+                    <img src="assets/img/pre-hed.jpg" alt="">
+                </div>
+
+            </main >
                 
+            <!---------------------- Слайдер ----------------------> 
+            <br><br><br><br><br><br><br><br>
+            <div id="container">
+                <div id="inner_container">
+                    <div id="imgs_container">
+                        <div class="img_container">    
+                            <img class="img_container_img1" width="912px" height="513px" src="assets/img/loading.jpg">
+                            <a class="img_container_a1" href="#">  </a> 
+                        </div>
+                        <div class="img_container">
+                            <img class="img_container_img2" width="912px" height="513px" src="assets/img/loading.jpg">
+                            <a class="img_container_a2" href="#">  </a>
+                        </div>
+                        <div class="img_container">
+                            <img class="img_container_img3" width="912px" height="513px" src="assets/img/loading.jpg">
+                            <a class="img_container_a3" href="#">  </a> 
+                        </div>
+                    </div>
+                    <div id="overlay">
+                        <div id="left_button" class="overlay_button" onclick="onLeftButton()"> < </div>
+                        <div id="right_button" class="overlay_button" onclick="onRightButton()"> > </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-2 col-md-6">
-              <h5 class="text-white mb-3">Quick links</h5>
-              <ul class="list-unstyled text-muted">
-                <li><a href="AddPost/addpost_main.html" class="social" target="_blank">Add recipe</a></li>
-                <li><a href="SignIN/signin_main.php" class="social" target="_blank">Sign in</a></li>
-                <li><a href="SignUP/signup_main.html" class="social" target="_blank">Sign up</a></li>
-              </ul>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <h5 class="text-white mb-3">Contact us!</h5>
-              <a class="sm-txt-fotter-gmail" href="mailto:Dom1ngo.D0nut3@gmail.com">Dom1ngo.D0nut3@gmail.com</a>
-              <p class="sm-txt-fotter">"Don't put off until dinner what you can eat for lunch."</p>  
+            <script>
+                let container = document.getElementById("container");
+                let imgs_containers = document.getElementsByClassName("img_container");
+                let imgs_count = imgs_containers.length;
+                let current_img_index=0;
+                let autoScroll_enabled=false;
+                let autoScroll_interval=3000;
+                let autoScroll_dir=1;
+            
+                function setup(){
+                    let container_width = container.clientWidth;
+                    for(let i=0;i<imgs_count;i++){
+                        let element = imgs_containers[i];
+                        let new_left_pos = container_width * i;
+                        element.style.left = new_left_pos + "px";
+                    }
+                }
+            
+                function onLeftButton(){
+                    if(current_img_index>0){
+                        let container_width = container.clientWidth;
+                        current_img_index--;
+                        for(let i=0;i<imgs_count;i++){
+                            let element = imgs_containers[i];
+                            let new_left_pos = container_width * (i-current_img_index);
+                            element.style.left = new_left_pos+"px";
+                        }
+                    } 
+                }
+                function onRightButton(){
+                    if(current_img_index<imgs_count-1){
+                        let container_width = container.clientWidth;
+                        current_img_index++;
+                        for(let i=0;i<imgs_count;i++){
+                            let element = imgs_containers[i];
+                            let new_left_pos = -container_width*(current_img_index-i);
+                            element.style.left = new_left_pos+"px";
+                        }
+                    }
+                }
+            
+                function autoScroll(){
+                    if(!autoScroll_enabled)return;
+                    if(current_img_index==0)autoScroll_dir=1;
+                    else if(current_img_index==imgs_count-1)autoScroll_dir=-1;
+                    if(autoScroll_dir<0){
+                        let container_width=container.clientWidth;
+                        current_img_index--;
+                        for(let i=0;i<imgs_count;i++){
+                            let element=imgs_containers[i];
+                            let new_left_pos=container_width*(i-current_img_index);
+                            element.style.left=new_left_pos+"px";
+                        }
+                    }else{
+                        let container_width=container.clientWidth;
+                        current_img_index++;
+                        for(let i=0;i<imgs_count;i++){
+                            let element=imgs_containers[i];
+                            let new_left_pos=-container_width*(current_img_index-i);
+                            element.style.left=new_left_pos+"px";
+                        }
+                    }
+                }
+
+                setup();
+                setInterval(autoScroll, autoScroll_interval);
+
+            </script>
+        
+            <!---------------------- Категорії ----------------------> 
+
+            <div class="category__container" id="category__container">
+                <br><br><br><br>
+                <h2 class="category__title"> Categories </h2>
+                <br><br><br><br><br><br>
+                <div class="category__links">
+
+                    <div class="cat__row">
+                        <a href="List/list_main.php?current=1&category=1" class="category__link">
+                          <div class="cat__1"> <img src="assets/img/category/soups.png" alt=""> </div>
+                          <span class="category__sub-title"> First course </span>
+                        </a>
+
+                        <a href="List/list_main.php?current=1&category=2" class="category__link">
+                          <div class="cat__2"> <img src="assets/img/category/main_meal.png" alt=""> </div>
+                          <span class="category__sub-title"> Main course </span>
+                        </a>
+
+                        <a href="List/list_main.php?current=1&category=3" class="category__link">
+                          <div class="cat__3"> <img src="assets/img/category/breakfast.png" alt=""> </div>
+                          <span class="category__sub-title"> Breakfast </span>
+                        </a>
+                    </div>
+
+                    <div class="cat__row">
+                        <a href="List/list_main.php?current=1&category=4" class="category__link">
+                          <div class="cat__4"> <img src="assets/img/category/dinner.png" alt=""> </div>
+                          <span class="category__sub-title"> Supper </span>
+                        </a>
+
+                        <a href="List/list_main.php?current=1&category=5" class="category__link">
+                          <div class="cat__5"> <img src="assets/img/category/drinks.png" alt=""> </div>
+                          <span class="category__sub-title"> Drinks </span>
+                        </a>
+                        
+                        <a href="List/list_main.php?current=1&category=6" class="category__link">
+                          <div class="cat__6"> <img src="assets/img/category/salads.png" alt=""> </div>
+                          <span class="category__sub-title"> Salads </span>
+                        </a>
+                    </div>
+
+                    <div class="cat__row">
+                        <a href="List/list_main.php?current=1&category=7" class="category__link">
+                          <div class="cat__7"> <img src="assets/img/category/snacks.png" alt=""> </div>
+                          <span class="category__sub-title"> Snacks </span>
+                        </a>
+
+                        <a href="List/list_main.php?current=1&category=8" class="category__link">
+                          <div class="cat__8"> <img src="assets/img/category/desserts.png" alt=""> </div>
+                          <span class="category__sub-title"> Desserts </span>
+                        </a>
+
+                        <a href="List/list_main.php?current=1&category=9" class="category__link">
+                          <div class="cat__9"> <img src="assets/img/category/baking.png" alt=""> </div>
+                          <span class="category__sub-title"> Baking </span>
+                        </a>
+                    </div>
+
+                    <a href="List/list_main.php?current=1&category=10" class="category__link">
+                      <div class="cat_10"> <img src="assets/img/category/another.png" alt=""> </div>
+                      <span class="category__sub-title cat_last"> Another </span>
+                    </a>
+
+                </div>
             </div>
 
-          </div>
+            <br><br><br><br><br><br><br><br><br>
+
         </div>
-      </footer>
-      <div class="black">
-        <p class="sm-txt-fotter black-fotter">&copy; Copyrights. All rights reserved.</p>
-      </div>
-    </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="assets/index/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>  
+        <!-------------------------------------------- Футер -------------------------------------------->
+
+        <footer class="footer">
+            <div class="footer__container _container">
+
+                <a href="index.html" target="_blank" class="footer__logo"> <img width="100px" src="assets/img/sm_donut_logo.png" alt="" class="fotter-logo"> </a>
+
+                
+                <div class="footer__socials-block">
+                    <p class="footer__socials-title"> We in social networks </p>
+                    <a href="https://www.instagram.com/domingo_donut/" class="inst-link footer__social" target="_blank"> Instagram </a> 
+                    <a href="https://t.me/Domingo_Donut" class="telega-link footer__social" target="_blank"> Telegram </a>
+                    <br><br>
+                </div>
+
+                <div class="footer__quick-block">
+                    <h5 class="footer__quick-title"> Quick links </h5>
+                    <ul class="footer__quick-links">
+                        <li> <a href="AddPost/addpost_main.html" class="footer__quick-link" target="_blank"> Add recipe </a> </li>
+                        <li> <a href="SignIN/signin_main.php" class="footer__quick-link" target="_blank"> Sign in </a> </li>
+                        <li> <a href="SignUP/signup_main.html" class="footer__quick-link" target="_blank"> Sign up </a> </li>
+                    </ul>
+                    <br><br>
+                </div>
+
+                <div class="footer__mail-block">
+                    <h5 class="footer__mail-title"> Contact us! </h5>
+                    <a class="footer__mail" href="mailto:Dom1ngo.D0nut3@gmail.com"> Dom1ngo.D0nut3@gmail.com </a>
+                    <br><br><br><br>
+                    <p class="footer__mail-txt"> "Don't put off until dinner what you can eat for lunch." </p>  
+                </div>
+
+            </div>
+        </footer>
+
+        <!-------------------------------------------- Права -------------------------------------------->
+
+        <div class="copyrights">
+            <br><br><br>
+            <p class="copyrights__txt">&copy; Copyrights. All rights reserved.</p>
+        </div>
+
+    </div>
+    
+    <script src="assets/jQuerry.js"></script>
+    <script src="assets/index/index.js"></script>
 </body>
 </html>

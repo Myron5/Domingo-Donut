@@ -1,259 +1,165 @@
-@font-face {
-    font-family: AXIS;
-    src: url(/fonts/AXIS.otf);
-  }
-@font-face {
-    font-family: Fredoka One;
-    src: url(/fonts/Fredoka.ttf);
-  }
-.donut-logo{
-    width: 120px;
-    height: 120px;
-    
-}
- 
-.cat-f{
-    color: white;
-    font-size: 23px;
-    text-decoration: none;
-    font-family: Fredoka One;
-    padding-left: 60px;
-    padding-right: 80px;
-    text-shadow: 2px 2px 1px black;
-    
-}
-.cat-f:hover {
-    color: gainsboro;
-    transition: all 0.3s;
-  }
+/* _________________________________________ Рецепт _________________________________________ */
 
-
-.hed-fot{
-    background: #f1c63d;
-background: -moz-linear-gradient(top, #f1c63d 0%, #be8fff 44%, #30c9c0 100%);
-background: -webkit-linear-gradient(top, #f1c63d 0%,#be8fff 44%,#30c9c0 100%);
-background: linear-gradient(to bottom, #f1c63d 0%,#be8fff 44%,#30c9c0 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1c63d', endColorstr='#30c9c0',GradientType=0 );
+.main {
+  display: flex;
+  flex-direction: column;
 }
 
-.icon_hed{
-    width: 45px;
-    height: 45px;
+.receipt-block { 
+  margin: 100px calc(50% - 512px) 0px calc(50% - 512px);
+  border: 10px #000 solid;
+  border-radius: 23px;
 }
 
-.hed-i{
-    padding-left: 60px;
+.receipt__img { 
+  margin-top: 10px;
+  margin-left: -10px;
+  border: 5px #000 solid;
 }
 
-
-                                    /* SEARCH BAR */
-
-/* Style the search field */
-form.example input[type=text] {
-    padding: 15px;
-    font-size: 17px;
-    border: 3px solid white;
-    float: left;
-    width: 80%;
-    background: transparent;
-  }
-  
-  /* Style the submit button */
-  form.example button {
-    float: left;
-    width: 5%;
-    padding: 3px;
-    background: transparent;
-    color: white;
-    font-size: 17px;
-    border: 3px solid white;
-    border-left: none; /* Prevent double borders */
-    cursor: pointer;
-  }
-  
-  form.example button:hover {
-    background: #ffffff46;
-  }
-  
-  /* Clear floats */
-  form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-  }                                                    /* END OF SEARCH BAR */
-
-.search_icon{
-  width: 49px;
-  height: 49px;
-}
-
-.search-bar{
-  padding-left: 190px;
-}
-
-input::placeholder {
-  color: white;
-}
-
-.rec-title{
-  margin-bottom: 0;
+.receipt__title { 
+  font-family: Fredoka;
   text-align: center;
-  color: white;
-  font-family: AXIS;
-  font-size: 38px;
-  text-shadow: 2px 2px 1px black;
-  padding-top: 90px;
+  font-size: 30px;
+  color: #fff;
+  line-height: 100px;
 }
 
-                      /* footer */
+.receipt__txt { 
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
 
-.underlogo_txt{
-  padding-top: 30px;
-  margin-bottom: 10px;
+  font-family:  'Montserrat', sans-serif;
+  line-height: 35px;
+  text-align: left;
+  font-size: 25px;
+  color: #fff;
 }
 
- .text-white{
-  color: white;
-  font-family: AXIS;
-}
-
-.sm-txt-fotter{
-  color: white;
-  font-size: 17px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-a:hover, a:focus {
-  text-decoration: none;
-}
-
-footer {
-  background: #00000098;
-}
-
-/* ==========================================
-    CUSTOM UTILS CLASSES
-  ========================================== */
-  body, html {
-    height: 100%;
+@media (max-width: 1050px){
+  .receipt__img {
+    width: 750px;
   }
 
-.social{
-  font-size: 16px;
-  color: white;
-  text-decoration: underline;
-}
-
-.social:hover{
-  text-decoration: underline;
-  color: lightgray;
-}
-
-
-.black{
-  background-color: #000000;
-  padding-top: 10px;
-}
-
-.telega-link{
-  padding-left: 40px;
-}
-
-.black-fotter{
-  color: rgb(61, 61, 61);
-  margin-left: 130px;
-}
-
-  .fotter-logo{
-    width: 120px;
-    height: 120px;
-    transform: translate(25%, 0%);
+  .receipt-block { 
+    margin: 100px calc(50% - 375px) 0px calc(50% - 375px);
   }
 
-
-.sm-txt-fotter-gmail{
-  cursor: pointer;
-  color: white;
-  font-size: 17px;
-  font-family: 'Montserrat', sans-serif;
-  
-  
-}
-.sm-txt-fotter-gmail:hover{
-  color: gainsboro;
-  text-decoration: underline;
+  .receipt__txt { 
+    max-width: 600px;
+  }
 }
 
-/* ==========================================
-    rec
-  ========================================== */
+@media (max-width: 800px){
+  .receipt__img {
+    width: 550px;
+  }
 
-.card-block{
-    margin: 20px 0px 20px 0px;
+  .receipt-block { 
+    margin: 100px calc(50% - 275px) 0px calc(50% - 275px);
+  }
+
+  .receipt__title { 
+    display: block;
+    max-width: 500px;
+    line-height: 40px;
+    margin-top: 20px;
+  }
+
+  .receipt__txt { 
+    max-width: 500px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 700px){
+  .receipt-block { 
+    margin: 350px calc(50% - 275px) 0px calc(50% - 275px);
+  }
+}
+
+@media (max-width: 570px) {
+  .receipt__img {
+    width: 350px;
+  }
+
+  .receipt-block { 
+    margin: 350px calc(50% - 175px) 0px calc(50% - 175px);
+  }
+
+  .receipt__title { 
+    display: block;
+    max-width: 300px;
+    line-height: 40px;
+  }
+
+  .receipt__txt { 
+    max-width: 300px;
+  }
+}
+
+/* _________________________________________ Автор _________________________________________ */
+
+.author-block { 
+  margin: 0px 0px 30px calc(50vw - 90px);
+  /* background-color: #696969; */
+  opacity: 0.8;
+  border: 3px #000 solid;
+  border-radius: 23px;
+
+  display: flex;
+  max-width: 600px;
+}
+
+.author__img { 
+  margin-left: 50px;
+}
+
+.author__info { 
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+
+  font-family:  'Montserrat', sans-serif;
+  line-height: 35px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+}
+
+.author__name { 
     
-  }
-  
-  
-    .main-rec-info{
-      float: right;
-      
-    }
-    .cat-block-title{
-      color: white;
-      text-shadow: 2px 2px 1px black;
-      font-family: AXIS;
-      font-size: 33px;
-    }
-    
-  .cat-block-p{
-    text-shadow: 1px 1px 1px black;
-    color: white;
-    font-size: 19px;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .user-info-txt{
-    text-shadow: 1px 1px 1px black;
-    color: white;
-    font-size: 17px;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 50px;
-    height: 50px;
-  }
-  
-  .icon-cat-mar{
-    margin: 5px 5px 5px 5px;
-    margin-right: 10px;
-  }
-  .img-cat-main{
-    border-radius: 6px;
-    margin-top: 10px;
-  }
-  
-  .cat-user-info-block{
-    display: flex;
-  }
-  
-  .rec-tt-style{
-    color: white;
-    text-shadow: 2px 2px 1px black;
-    font-family: AXIS;
+}
 
-  }
+.author__email { 
 
-  .rec-des-block{
-      margin-top: 40px;
-      margin-bottom: 50px;
+}
+
+.author__date { 
+
+}
+
+@media (max-width: 1050px){
+    .author-block { 
+        margin: 0px 0px 30px calc(50vw - 225px);
+    }
+}
+
+@media (max-width: 800px){
+  .author-block { 
+      margin: 0px 0px 30px calc(50vw - 275px);
+      max-width: 550px;
   }
-  .rec-des-txt-style{
-    color: white;
-    text-shadow: 1px 1px 1px black;
-    font-size: 17px;
-    font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 570px) {
+  .author-block { 
+      margin: 0px 0px 30px calc(50vw - 175px);
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 350px;
   }
+}

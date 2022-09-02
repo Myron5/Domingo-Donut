@@ -1,46 +1,558 @@
-@media(min-width: 1910px) and (max-width:1980px){
-.pre-h-t{
-    font-size: 55px;
-}
-.dom{
-    font-size: 55px;
-    padding-left: 135px;
-}
-.cat-f{
-    margin-left: 90px;
-}
-.hed-i{
-    margin-left: 90px;
-}
-.dropdown-item{
-    font-size: 22px;
-}
-.black-fotter{
-    padding-left: 180px;
-}
-.full-img{
-    padding-left: 250px;
-}
+/* _________________________________________ Обнулення _________________________________________ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    font-size: inherit;
+  }
+  
+html, body {
+    height: 100%;
+    line-height: 1;
+    font-size: 16px;
+    color: #000;
 }
 
-@media(min-width: 1210px) and (max-width:1360px){
-    .pre-h-t{
-        font-size: 40px;
-        margin-left: -40px;
-    }
-    .dom{
-        font-size: 55px;
-        margin-left: -40px;
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+img{
+    vertical-align: top;
+}
+
+._container {
+    max-width: 1500px;
+    margin: 0 auto;
+    -box-sizing: content-box;
+}
+
+._ibg { 
+    position: relative;
+}
+
+._ibg img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+  
+/* _________________________________________ Шрифти _________________________________________ */
+  
+@font-face {
+    font-family: "AXIS";
+    src: url("fonts/AXIS.otf");
+}
+  
+@font-face {
+    font-family: "Fredoka";
+    src: url("fonts/Fredoka.ttf");
+}
+
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw0aXpsog.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw9aXpsog.woff2) format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw3aXpsog.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw5aXo.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+ 
+/* _________________________________________ Шапка _________________________________________ */
+
+body {
+    background: #224b54;
+}
+
+.header { 
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.header__container { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header__logo img { 
+    margin: 60px 0px 0px 30px;
+}
+
+.header__menu { 
+
+}
+
+.menu__list { 
+    display: flex;
+    margin: 70px 0px 0px 170px;
+}
+
+.menu__item { 
+    margin: 0px 40px 0px 0px;
+}
+
+.menu__link { 
+    font-family: Fredoka;
+    font-size: 20px;
+    color: #fff;
+    line-height: 140%;
+    opacity: 0.8;
+}
+
+.menu__link-1:hover {
+    opacity: 1;
+}
+
+.menu__link-2:hover  {
+    opacity: 1;
+}
+
+.menu__link-3:hover  {
+    opacity: 1;
+
+}
+
+.menu__link-4:hover  {
+    opacity: 1;
+}
+
+.cat {
+    position: absolute;
+    background-color: #fff;
+    visibility: hidden;
+}
+
+.cat li {
+    background-color: #fff;
+    border: 1px #ababab solid;
+}
+
+.cat__link {
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    font-size: 20px;
+}
+
+.menu__link-1:hover .cat {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cat li:hover {
+    border: 1px yellow solid;
+}
+
+@media (max-width: 992px){
+    .menu__list { 
+        margin: 70px 0px 0px 70px;
     }
 
+    .menu__item { 
+        margin: 0px 10px 0px 0px;
+    }
+}
 
-    .cat-f{
-        margin-left: -20px;
+@media (max-width: 700px){
+    .header__container{
+        flex-direction: column;
     }
-    .full-img{
-        margin-left: -55px;
+
+    .header__logo img { 
+        margin: 60px auto;
     }
-    .black{
-        margin-left: -45px;
+
+    .menu__list { 
+        margin: 0 auto;
+        flex-direction: column;
     }
+
+    .menu__item { 
+        margin: 10px;
+    }
+}
+
+@media (min-width: 1300px){
+    .menu__list { 
+        margin: -60px 0px 0px 180px;
+    }
+
+    .menu__item { 
+        margin: 150px 100px 0px 0px;
+    }
+
+    .menu__link { 
+        font-size: 26px;
+        line-height: 140%;
+    }
+}
+
+/* _________________________________________ Пошук _________________________________________ */
+
+form.search__form input[type=text] {
+    margin: 40px 0px 40px 110px;
+    padding: 15px;
+    font-size: 17px;
+    border: 3px solid white;
+    float: left;
+    width: 60%;
+    background: transparent;
+    color: #fff;
+}
+
+form.search__form button {
+    margin: 37px 0px 0px -5px;
+    float: left;
+    width: 5%;
+    padding: 3px;
+    background: transparent;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+form.search__form button:hover {
+    background: #ffffff46;
+}
+
+form.search__form::after {
+    content: "";
+    clear: both;
+    display: table;
+}                                                    
+
+.header__search {
+    padding-left: 190px;    
+}
+
+
+@media (max-width: 992px){
+    form.search__form input[type=text] {
+        margin: 30px auto;
+    }
+
+    form.search__form button {
+        margin: 27px 0px 0px -5px;
+    }
+}
+
+@media (max-width: 700px){
+    form.search__form button {
+        margin: 37px 0px 0px -5px;
+    }
+
+    form.search__form input[type=text] {
+        margin: 40px 0px 40px -30px;
+    }
+}
+
+@media (max-width: 500px){
+    form.search__form button {
+        margin: 37px 0px 0px 15px;
+    }
+
+    .search__btn img {
+        width: 40px;
+    }
+
+    form.search__form input[type=text] {
+        width: 270px;
+        height: 40px;
+        margin: 40px -20px 40px -120px;
+    }
+}
+
+@media (min-width: 1300px){
+    form.search__form input[type=text] {
+        width: 825px;
+    }
+}
+
+@media (min-width: 1500px){
+    form.search__form input[type=text] {
+        margin: 40px 0px 40px calc(50vw - 650px);
+    }
+
+    form.search__form button {
+    margin: 37px 0px 0px calc(-2vw + 20px);
+    }
+}
+
+/* ***********************************************************************
+***********************************************************************
+***********************************************************************
+***********************************************************************
+*********************************************************************** */
+
+/* _________________________________________ Фон _________________________________________ */
+
+.background-cover {
+    width: 100%;
+    background: #f1c63d;
+    background: -moz-linear-gradient(top, #f1c63d 0%, #be8fff 44%, #30c9c0 100%);
+    background: -webkit-linear-gradient(top, #f1c63d 0%,#be8fff 44%,#30c9c0 100%);
+    background: linear-gradient(to bottom, #f1c63d 0%,#be8fff 44%,#30c9c0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1c63d', endColorstr='#30c9c0',GradientType=0 );
+}
+
+/* _________________________________________ Футер _________________________________________ */
+
+.footer { 
+
+}
+
+.footer__container { 
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__logo img { 
+    margin: 30px 0px 0px 20px;
+}
+
+/* __________ Телеграм + інста _________ */
+
+.footer__socials-block { 
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.fotter-logo { 
+
+}
+
+.footer__socials-title { 
+    margin: 30px 0px 30px 0px;
+    color: white;
+    font-family: AXIS;
+    font-size: 25px;
+}
+
+.footer__social { 
+    margin: 40px 0px 40px 0px;
+    color: white;
+    font-size: 23px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer__social:hover { 
+    color: green;
+}
+
+.inst-link { 
+
+}
+
+.telega-link { 
+    margin: 40px 0px 40px 30px;
+}
+
+
+/* __________ Швидкі лінки _________ */
+
+.footer__quick-block { 
+    margin-top: 20px;
+}
+
+.footer__quick-title { 
+    margin: 30px 0px 30px 0px;
+    color: white;
+    font-family: AXIS;
+    font-size: 25px;
+}
+
+.footer__quick-links { 
+
+}
+
+.footer__quick-link { 
+    color: white;
+    font-size: 23px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 2;
+}
+
+.footer__quick-link:hover { 
+    color: green;
+}
+
+/* __________ Пошта _________ */
+
+.footer__mail-block { 
+    margin-top: 20px;
+}
+
+.footer__mail-title { 
+    margin: 30px 0px 30px 0px;
+    color: white;
+    font-family: AXIS;
+    font-size: 25px;
+}
+
+.footer__mail { 
+    color: white;
+    font-size: 23px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer__mail:hover {
+    color: green;
+}
+
+.footer__mail-txt { 
+    text-align: center;
+    color: white;
+    font-size: 23px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+}
+
+
+@media (max-width: 992px){
+    .footer__container { 
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__socials-block {
+        border-bottom: 3px solid white;
+    }
+
+    .footer__quick-block {
+        border-bottom: 3px solid white;
+    }
+}
+
+@media (min-width: 993px){
+    .footer__socials-block {
+        border-right: 3px solid white;
+        margin-right: 20px;
+    }
+
+    .footer__quick-block {
+        border-right: 3px solid white;
+        margin-right: 20px;
+    }
+}
+
+@media (min-width: 1300px){
+    .footer__container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .footer__mail-txt {
+        display: block;
+        max-width: 250px;
+    }
+
+    .footer__socials-block {
+        border: none;
+        margin-right: 0px;
+    }
+
+    .footer__quick-block {
+        border: none;
+        margin-right: 0px;
+    }
+}
+
+@media (min-width: 1600px){
+    .footer__logo img { 
+        margin: 30px 0px 0px -80px;
+    }
+
+    .footer__mail-txt {
+        display: block;
+        max-width: 500px;
+    }
+}
+
+/* _________________________________________ Права _________________________________________ */
+
+.copyrights { 
+    background-color: #000;
+}
+
+.copyrights__txt { 
+    color: white;
+    font-size: 23px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 2;
+}
+
+/* _________________________________________ Помилки _________________________________________ */
+
+.search__error {
+    font-family: Fredoka;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.result {
+    font-family: Fredoka;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.sm-result {
+    font-family: Fredoka;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+
+.block {
+    display: none;
 }

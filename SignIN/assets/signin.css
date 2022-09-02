@@ -1,0 +1,219 @@
+.sign-in {
+  position: absolute;
+  top: 540px;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+@media (max-width: 700px){
+  .sign-in {
+    top: 740px;
+  }
+}
+
+.sign-in h1 {
+  margin: 0 0 30px;
+  padding: 0;
+  font-family: AXIS;
+  font-size: 20px;
+  text-shadow: 2px 2px 1px black;
+  color: #fff;
+  text-align: center;
+}
+
+.form__box {
+  position: relative;
+}
+
+input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-family: AXIS;
+  text-shadow: 2px 2px 1px black;
+  font-size: 13px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+/* -------------- Ховери формів -------------- */
+
+.sign-in .form__box input:focus ~ label, 
+.sign-in .form__box input:valid ~ label {
+  top: -30px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+/* ------- Кнопка Go To ------- */
+
+.form__btn {
+  border: 1px #fff solid;
+  text-align: center;
+  font-family: AXIS;
+  text-shadow: 1px 1px 1px black;
+  font-size: 13px;
+  color: #fff;
+  padding: 5px 70px;
+  width: 230px;
+  margin-top: 65px;
+
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.form__btn:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+  transition: background-color 0.68s ease;
+}
+.form__btn span{
+  position: absolute;
+  display: block;
+}
+.form__btn span:nth-child(1){
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg,transparent,#03e9f4);
+  animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+  0%{
+    left: -100%;
+  }
+  50%,100%{
+    left: 100%;
+  }
+}
+.form__btn span:nth-child(2){
+  top: -100%;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#03e9f4);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes animate2{
+  0%{
+    top: -100%;
+  }
+  50%,100%{
+    top: 100%;
+  }
+}
+.form__btn span:nth-child(3){
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(270deg,transparent,#03e9f4);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.50s;
+}
+@keyframes animate3{
+  0%{
+    right: -100%;
+  }
+  50%,100%{
+    right: 100%;
+  }
+}
+.form__btn span:nth-child(4){
+  bottom: -100%;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#03e9f4);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes animate4{
+  0%{
+    bottom: -100%;
+  }
+  50%,100%{
+    bottom: 100%;
+  }
+}
+
+/* ------------------------ */
+
+/* _________________________________________ Автор _________________________________________ */
+  
+.author {
+  display: flex;
+  border: 3px #000 solid;
+  border-radius: 10px;
+  max-width: 400px;
+
+  margin-left: calc(50% - 200px);
+  margin-bottom: 5px;
+}
+
+.author__img { 
+  margin-top: 3px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.author-block { 
+  margin-left: 20px;
+  line-height: 18px;
+
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 2px 2px 1px black;
+}
+
+.author__name { 
+
+}
+
+.author__email { 
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.author__email:hover { 
+  text-shadow: none;
+}
+
+.author__date { 
+
+}
+
+@media (max-width: 700px){
+  .author {
+    margin-top: 250px;
+  }
+}

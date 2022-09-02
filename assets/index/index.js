@@ -1,18 +1,21 @@
-$(".example").on("submit", function(event) {
-    
-    event.preventDefault();
-    $('.fieldError').remove(); // Очищення помилок (після зміни поля)
+$(".search__form").on("submit", function(event) {
 
-    let request = $(".search-ph").val();
+    event.preventDefault();
+    $('.search__error').remove(); // Очищення помилок (після зміни поля)
+
+    let request = $(".search__input").val();
     console.log(request.trim())
 
     if(request.trim()) {
         document.location.href = `List/list_main.php?current=1&request=${request}`;
     }
     else if(request.trim() == "") {
-        $(".example").prepend( $("<p class='fieldError message-txt'>Empty field</p>") );
+        console.log("Empty field")
+        $(".search__form").prepend( $("<p class='search__error'>Empty field</p>") );
     }
+    
 });
+
 
 $.ajax({
     url: 'assets/index/index.php',
@@ -37,9 +40,8 @@ $.ajax({
         } 
         else {
             for(let i=0; i<3; i++) {
-                $(`.ph${i+1}`).attr('src', `data:image/jpeg;base64, ${jsonData[i][2]}`);   
-                $(`.li${i+1}`).attr('href', `ReceiptPage/receipt_main.php?id=${jsonData[i][0]}`);
-                $(`.li${i+1}`).append( `${jsonData[i][1]}` ).hide().fadeIn(500);
+                $(`.img_container_img${i+1}`).attr('src', `data:image/jpeg;base64, ${jsonData[i][2]}`);   
+                $(`.img_container_a${i+1}`).append( `${jsonData[i][1]}` ).hide().fadeIn(500);
             }
         } 
     },

@@ -1,0 +1,254 @@
+const fields = document.getElementsByClassName("input")
+const mainBlock = document.getElementById("main-block")
+
+$(".search__form").on("submit", function(event) {
+  
+  event.preventDefault() // не обновлює сторінку при натисканні на кнопку 
+  removeElementsByClass("search__error")
+
+  const request = document.getElementsByClassName("search__input")[0].value
+  
+  if( request.trim() ) {
+    document.location.href = `../List/list_main.php?current=1&request=${request}`
+  }
+  else if( request.trim() == "" ) {
+    const newDoc = new DOMParser().parseFromString("<p class='search__error'> Empty field </p>", "text/xml")
+    const el = document.getElementsByClassName("search__form")[0];
+    el.prepend(newDoc.firstChild);
+    createElementWithClass("before", "search__form", "Empty field", "search__error")
+  }
+
+});
+
+$("[type=file]").on("change", function(){
+  var file = this.files[0].name;
+  var placeholder = $(this).attr("placeholder");
+
+  if($(this).val() != ""){
+    $(this).next().text(file);
+  } else {
+    $(this).next().text(placeholder);
+  }
+});
+
+$(".form__btn").on("click", function(event) {
+
+  event.preventDefault() // не обновлює сторінку при натисканні на кнопку 
+  removeElementsByClass("sm-result") // Очищення помилок (після зміни поля)
+  removeElementsByClass("result") // Очищення помилок (після зміни поля)
+
+  let normalField = true
+
+  const category = fields[0].value
+  const title = fields[1].value
+  const text = fields[2].value
+  const file = fields[3].files[0];
+
+  
+  for (var i = 0; i < fields.length; i++) {
+    if ( !fields[i].value.trim() ) {
+      normalField = false
+      $(`.form__box:eq(${i})`).prepend( "<p class='sm-result'> Empty field </p>" );
+    }
+  } // Перевірка полей на пустоту 
+  if ( title.length > 35 ) {
+    normalField = false
+    $('.form__box:eq(1)').prepend( "<p class='sm-result'> Title is too long </p>" );
+  } // Перевірка імені на кількість символів (менше 35)
+  else if ( text.length > 65530 ) {
+    normalField = false
+    $('.form__box:eq(2)').prepend( "<p class='sm-result'> Receipt is too long </p>" );
+  } // Перевірка імені на кількість символів (менше 65530)
+
+  if ( fields[3].value != "" && 2048000 < file.size ) {
+    normalField = false
+    $('.form__box:eq(3)').prepend( "<p class='sm-result'> File is too big </p>" );
+  } // Перевірка на розмір файлу в байтах (менше 2000 кB)
+  else if ( fields[3].value != "" && file.type != "image/jpeg" ) {
+    normalField = false
+    $('.form__box:eq(3)').prepend( `<p class='sm-result'> Error filetype ${file.type} is not compatible with required type (.jpg) </p>` );
+  } // Перевірка на тип .jpg
+
+
+  if(normalField) {
+
+    let formData = new FormData();
+    formData.append('category', category);
+    formData.append('title', title);
+    formData.append('text', text);
+    formData.append('photo', file);
+    
+    let request = new XMLHttpRequest();
+    request.open("POST", "assets/addpost.php");
+    request.send(formData);
+    request.onload = function () {
+      if (this.status >= 200 && this.status < 400) {
+    
+        var jsonData = JSON.parse(this.response);
+
+        if (jsonData.error1 == "1") {
+          div.classList.remove("result")
+          main-block.prepend(" <p class='result'> You have not entered into your account </p> ") 
+        } else if (jsonData.error2 == "2") {
+          $('.result').remove();
+          $(".add-recipe").prepend( $("<p class='result'> Error connectiong to DataBase </p>") ).hide().fadeIn(500);
+        } else if (jsonData.error3 == "3"){
+          $('.result').remove();
+          $(".add-recipe").prepend( $("<p class='result'> Error data-input to DataBase </p>") ).hide().fadeIn(500);
+        } else if (jsonData.error4 == "4"){
+          $('.result').remove();
+          $(".add-recipe").prepend( $("<p class='result'> Error data-receiving by the server </p>") ).hide().fadeIn(500);
+        } else {
+    
+          changeJSON(jsonData)
+
+          removeElementsByClass("result")
+          mainBlock.append
+          (`
+            <p class='result'>Data was sent to server, post id = ${jsonData.sucess_post_id}</p>
+            <p class='result'>post author id = ${jsonData.sucess_author_id}</p>
+            <p class='result message-txt'>Category = ${jsonData.sucess_category}</p>
+            <p class='result message-txt'>Title = ${jsonData.sucess_title}</p>
+            <p class='result message-txt'>Receipt = ${jsonData.sucess_text}</p>
+            <p class='result message-txt'>post was published in ${jsonData.sucess_month}, ${jsonData.sucess_year}</p>
+            <img class='result' width="875px" height="400px" src="data:image/jpeg;base64, ${jsonData.sucess_image}" alt="">
+    
+            <p class='result message-txt'>${jsonData.sucess_name}</p>
+            <p class='result message-txt'>${jsonData.sucess_email}</p>
+            <p class='result message-txt'>on this site from ${jsonData.sucess_author_month}, ${jsonData.sucess_author_year}</p>
+            <img class='result' width="100px" height="100px" src="data:image/jpeg;base64, ${jsonData.sucess_author_image}" alt="">
+          `)
+        }
+      } else { 
+
+      }
+
+    }
+    
+    request.onerror = function () {
+      $('.result').remove();
+      $(".add-recipe").append( $("<p class='result'> Oww! Chech your Internet connection, or restart this page </p>") ).hide().fadeIn(500);
+    };
+
+
+    
+    document.getElementById("btn").style.display = "none"
+  } // відправка даних через Ajax запрос на сервер 
+
+});
+
+
+function changeJSON(jsonData){
+  const number = (jsonData.sucess_date / 31536000) + 1970;
+  jsonData.sucess_year = Math.floor(number);
+  jsonData.sucess_month = Math.floor( (number - jsonData.sucess_year)*365/30.5 );
+
+  const author_number = (jsonData.sucess_author_date/ 31536000) + 1970;
+  jsonData.sucess_author_year = Math.floor(author_number);
+  jsonData.sucess_author_month = Math.floor( (author_number - jsonData.sucess_author_year)*365/30.5 );
+
+
+  jsonData.sucess_month = translateToMonth(jsonData.sucess_month)
+  jsonData.sucess_author_month = translateToMonth(jsonData.sucess_author_month)
+
+  jsonData.sucess_category = translateToCategory(jsonData.sucess_category)
+
+
+  function translateToMonth(month){
+    switch(month) {
+      case 1:
+        return 'January';
+        break;
+      case 2:
+        return 'February';
+        break;
+      case 3:
+        return 'March';
+        break;
+      case 4:
+        return 'April';
+        break;
+      case 5:
+        return 'May';
+        break;
+      case 6:
+        return 'June';
+        break;
+      case 7:
+        return 'July';
+        break;
+      case 8:
+        return 'August';
+        break;
+      case 9:
+        return 'September';
+        break;
+      case 10:
+        return 'October';
+        break;
+      case 11:
+        return 'November';
+        break;
+      case 12:
+        return 'December';
+        break;
+      default:
+        return '';
+        break;
+    }
+  }
+  function translateToCategory(category){
+    switch(category) {
+      case '1':
+        return 'First course';
+        break;
+      case '2':
+        return 'Main course';
+        break;
+      case '3':
+        return 'Breakfast';
+        break;
+      case '4':
+        return 'Supper';
+        break;
+      case '5':
+        return 'Drinks';
+        break;
+      case '6':
+        return 'Salads';
+        break;
+      case '7':
+        return 'Appetizer';
+        break;
+      case '8':
+        return 'Desserts';
+        break;
+      case '9':
+        return 'Baking';
+        break;
+      case '10':
+        return 'Other ...';
+        break;
+    }
+  }
+}
+
+function removeElementsByClass(className){
+  const elements = document.getElementsByClassName(className);
+  while(elements.length > 0){
+    elements[0].parentNode.removeChild(elements[0]);
+  }
+}
+
+function createElementWithClass(type, clasName, text, clas){
+  const el = document.getElementsByClassName(clasName)[0];
+
+  let node = document.createElement('p');
+  node.textContent = text;
+  node.className = clas;
+
+  if(type == "before")
+    el.prepend(node);
+  else if(type == "after")
+    el.append(node);
+}
